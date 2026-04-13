@@ -66,7 +66,7 @@ public class RandProductMaker extends JFrame {
 
             raf.writeChars(padString(nameField.getText(), NAME_CHAR_LIMIT));
             raf.writeChars(padString(descField.getText(), DESC_CHAR_LIMIT));
-            raf.writeChars(padString(nameField.getText(), ID_CHAR_LIMIT));
+            raf.writeChars(padString(idField.getText(), ID_CHAR_LIMIT));
             raf.writeDouble(Double.parseDouble(costField.getText()));
 
 
