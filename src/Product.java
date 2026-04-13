@@ -13,6 +13,10 @@ public class Product {
     private String desc;
     private Double cost;
 
+    public static final int ID_LENGTH = 6;
+    public static final int NAME_LENGTH = 35;
+    public static final int DESC_LENGTH = 75;
+
     //Constructor
     public Product(String ID, String name, String desc, Double cost) {
         this.ID = ID;
@@ -20,6 +24,17 @@ public class Product {
         this.desc = desc;
         this.cost = cost;
     }
+
+    private String padField(String data, int length) {
+        if (data.length() > length) {
+            return data.substring(0, length);
+        }
+        return String.format("%-" + length + "s", data); //padding
+    }
+
+    public String getPaddedID() { return padField(ID, ID_LENGTH); }
+    public String getPaddedName() { return padField(name, NAME_LENGTH); }
+    public String getPaddedDesc() { return padField(desc, DESC_LENGTH); }
 
     //Getters and Setters
     public String getID() {
